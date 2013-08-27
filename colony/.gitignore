@@ -1,3 +1,2 @@
-/application.properties
-*.class
-*.log
+colony/application.properties
+colony/target/*
