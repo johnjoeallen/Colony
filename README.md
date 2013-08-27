@@ -1,4 +1,4 @@
 Colony
 ======
 
-All in one, Q&amp;A, Blog, Forum system
+Enterprise knowledge system, a mashup of G+, StackOverflow, and Wordpress, and Forums
