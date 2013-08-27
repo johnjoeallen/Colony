@@ -1,2 +1,2 @@
-colony/application.properties
-colony/target/*
+/target/*
+/application.properties
