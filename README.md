@@ -1,4 +1,4 @@
 Colony
 ======
 
-Enterprise knowledge system, a mashup of G+, StackOverflow, and Wordpress, and Forums
+Enterprise knowledge system. A sort of mashup of G+, StackOverflow, Wordpress, and Forums
