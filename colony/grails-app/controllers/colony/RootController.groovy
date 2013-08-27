@@ -4,6 +4,6 @@ class RootController {
 
     def index()
 	{
-		render "Welcome to Colony 0.99"
+		render (view: "index")
 	}
 }
