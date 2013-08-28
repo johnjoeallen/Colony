@@ -1,6 +1,6 @@
 package colony
 
-class RootController {
+class UIController {
 
     def index()
 	{
