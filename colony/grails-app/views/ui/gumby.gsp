@@ -35,10 +35,10 @@
 
 	<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 			 However, there is a blank style.css in the css directory should you prefer -->
-	<link rel="stylesheet" href="css/gumby.css">
+	<link rel="stylesheet" href="components/gumby/css/gumby.css">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
-	<script src="js/libs/modernizr-2.6.2.min.js"></script>
+	<script src="components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 
 <style>
@@ -70,7 +70,7 @@
 			<a class="toggle" gumby-trigger="#nav1 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="#">
-					<img src="img/gumby_mainlogo.png" gumby-retina />
+					<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
 				</a>
 			</h1>
 			<ul class="eight columns">
@@ -113,7 +113,7 @@
 		<a class="toggle" gumby-trigger="#nav2 > ul" href="#"><i class="icon-menu"></i></a>
 		<h1 class="four columns logo">
 			<a href="#">
-				<img src="img/gumby_mainlogo.png" gumby-retina />
+				<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
 			</a>
 		</h1>
 		<ul class="eight columns">
@@ -143,7 +143,7 @@
 			<a class="toggle" gumby-trigger="#nav3 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="#">
-					<img src="img/gumby_mainlogo.png" gumby-retina />
+					<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
 				</a>
 			</h1>
 			<ul class="eight columns">
@@ -169,7 +169,7 @@
 		<a class="toggle" gumby-trigger="#nav4 > ul" href="#"><i class="icon-menu"></i></a>
 		<h1 class="four columns logo">
 			<a href="#">
-				<img src="img/gumby_mainlogo.png" gumby-retina />
+				<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
 			</a>
 		</h1>
 		<ul class="eight columns">
@@ -753,27 +753,27 @@
 			<div class="twelve columns">
 				<div class="row">
 					<div class="five columns image circle">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 					<div class="three columns image circle">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 					<div class="two columns image circle">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 					<div class="one columns image circle">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="four columns image rounded">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 					<div class="four columns image photo">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 					<div class="four columns image polaroid photo">
-						<img src="img/img_silence_demo.jpg"/>
+						<img src="components/gumby/img/img_silence_demo.jpg"/>
 					</div>
 				</div>
 			</div>
@@ -785,36 +785,36 @@
 			<div class="four columns">
 				<h4 class="lead">2-up</h4>
 				<ul class="two_up tiles">
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
 				</ul>
 			</div>
 			<div class="four columns">
 				<h4 class="lead">3-up</h4>
 				<ul class="three_up tiles">
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
 				</ul>
 			</div>
 			<div class="four columns">
 				<h4 class="lead">4-up</h4>
 				<ul class="four_up tiles">
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
 				</ul>
 			</div>
 		</div>
@@ -822,16 +822,16 @@
 			<div class="four columns">
 				<h4 class="lead">5-up</h4>
 				<ul class="five_up tiles">
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
-					<li class="rounded image"><img src="img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
+					<li class="rounded image"><img src="components/gumby/img/img_silence_demo.jpg"/></li>
 				</ul>
 			</div>
 		</div>
@@ -1257,9 +1257,9 @@
 	<script>
 	if(!window.jQuery) {
 	if(!oldieCheck) {
-	  document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+	  document.write('<script src="components/gumby/js/libs/jquery-2.0.2.min.js"><\/script>');
 	} else {
-	  document.write('<script src="js/libs/jquery-1.10.1.min.js"><\/script>');
+	  document.write('<script src="components/gumby/js/libs/jquery-1.10.1.min.js"><\/script>');
 	}
 	}
 	</script>
@@ -1267,22 +1267,22 @@
 	<!--
 	Include gumby.js followed by UI modules.
 	Or concatenate and minify into a single file
-	<script src="js/libs/gumby.js"></script>
-	<script src="js/libs/ui/gumby.retina.js"></script>
-	<script src="js/libs/ui/gumby.fixed.js"></script>
-	<script src="js/libs/ui/gumby.skiplink.js"></script>
-	<script src="js/libs/ui/gumby.toggleswitch.js"></script>
-	<script src="js/libs/ui/gumby.checkbox.js"></script>
-	<script src="js/libs/ui/gumby.radiobtn.js"></script>
-	<script src="js/libs/ui/gumby.tabs.js"></script>
-	<script src="js/libs/ui/gumby.navbar.js"></script>
-	<script src="js/libs/ui/gumby.fittext.js"></script>
-	<script src="js/libs/ui/jquery.validation.js"></script>
-	<script src="js/libs/gumby.init.js"></script> -->
+	<script src="components/gumby/js/libs/gumby.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.retina.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.fixed.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.skiplink.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.toggleswitch.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.checkbox.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.radiobtn.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.tabs.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.navbar.js"></script>
+	<script src="components/gumby/js/libs/ui/gumby.fittext.js"></script>
+	<script src="components/gumby/js/libs/ui/jquery.validation.js"></script>
+	<script src="components/gumby/js/libs/gumby.init.js"></script> -->
 
-	<script src="js/libs/gumby.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
+	<script src="components/gumby/js/libs/gumby.min.js"></script>
+	<script src="components/gumby/js/plugins.js"></script>
+	<script src="components/gumby/js/main.js"></script>
 
 	<!-- Change UA-XXXXX-X to be your site's ID -->
 	<!--<script>
