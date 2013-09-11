@@ -70,7 +70,7 @@
 			<a class="toggle" gumby-trigger="#nav1 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="#">
-					<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
+					<img src="images/colony.jpg" gumby-retina />
 				</a>
 			</h1>
 			<ul class="eight columns">
@@ -113,7 +113,7 @@
 		<a class="toggle" gumby-trigger="#nav2 > ul" href="#"><i class="icon-menu"></i></a>
 		<h1 class="four columns logo">
 			<a href="#">
-				<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
+				<img src="images/colony.jpg" gumby-retina />
 			</a>
 		</h1>
 		<ul class="eight columns">
@@ -143,7 +143,7 @@
 			<a class="toggle" gumby-trigger="#nav3 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="#">
-					<img src="components/gumby/img/gumby_mainlogo.png" gumby-retina />
+					<img src="componentsimages/colony.jpg" gumby-retina />
 				</a>
 			</h1>
 			<ul class="eight columns">
