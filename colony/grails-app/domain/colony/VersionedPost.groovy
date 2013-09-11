@@ -1,6 +1,7 @@
 package colony
 
 class VersionedPost {
+	String title
 	String content
 	Date	created
 	VersionedPost previous
