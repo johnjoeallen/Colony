@@ -52,8 +52,9 @@
 	.content { margin-top: 60px; }
 	.status { margin-top: 6px; }
 	h1 { font-size: 1.8rem; }
+	.posts h2 { font-size: 1.8rem; padding-bottom: 0px; }
 	p { font-size: .7rem; }
-	.author.title { font-size: .8rem; }
+	.posts.author.title { font-size: .8rem; margin-bottom: 22px; padding-bottom: 22px; }
 	.navbar { min-height: 40px; }
 </style>
 
@@ -113,8 +114,14 @@
 				<p>Colonies</p>
 			</div>
 			<div class="eight columns">
-				<div class="posts">
-					<g:each in="${posts}" var="post">
+				<div class="row">
+					<div class="eight columns centered text-center">
+						<h1>${colony.name}</h1>
+					</div>
+				</div>
+				
+				<div class="row">
+					<g:each in="${colony.posts}" var="post">
 						<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post,'current':post.current]"/>
 					</g:each>
 				</div>

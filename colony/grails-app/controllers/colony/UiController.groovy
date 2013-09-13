@@ -5,7 +5,8 @@ class UiController {
     def index()
 	{
 		def m = [:]
-		m.posts = Post.getAll()
+		Colony colony = Colony.findByName("MasterCard Labs")
+		m.colony = colony
 		render (view: "index", model: m)
 	}
 }
