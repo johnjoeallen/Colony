@@ -1,9 +1,11 @@
 package colony
 
 class Post {
+	String type
+	VersionedPost current
 	static belongsTo = [member: Member]
-	static hasMany = [versions: VersionedPost]
 	
     static constraints = {
+		type nullable: true
     }
 }

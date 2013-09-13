@@ -51,8 +51,10 @@
 	.modal h2, .modal .btn { margin: 5% 0 20px; }
 	.content { margin-top: 60px; }
 	.status { margin-top: 6px; }
-	h1 { font-size: 2rem; }
+	h1 { font-size: 1.8rem; }
 	p { font-size: .7rem; }
+	.author.title { font-size: .8rem; }
+	.navbar { min-height: 40px; }
 </style>
 
 <body>
@@ -107,30 +109,17 @@
 		-->
 		
 		<div class="row">
-			<div class="three columns">
+			<div class="two columns">
 				<p>Colonies</p>
 			</div>
-			<div class="six columns">
-				<form>
-					<div class="row">
-	  					<div class="status">
-		  					<ul class="six columns">
-								<li><textarea class="input textarea" placeholder="Status update" rows="3" columns="80"></textarea></li>
-								<li><div class="pretty small primary btn"><a href="#">Post</a></div></li>
-							</ul>
-						</div>
-					</div>
-				</form>
+			<div class="eight columns">
 				<div class="posts">
 					<g:each in="${posts}" var="post">
-						<g:each in="${post.versions}" var="version">
-							<h1>${version.title}</h1>
-							<markdown:renderHtml>${version.content}</markdown:renderHtml>
-						</g:each>
+						<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post,'current':post.current]"/>
 					</g:each>
 				</div>
 			</div>
-			<div class="three columns">
+			<div class="two columns">
 				<p>Profile</p>
 			</div>
 		</div>

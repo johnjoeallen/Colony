@@ -24,6 +24,10 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="type" title="${message(code: 'post.type.label', default: 'Type')}" />
+					
+						<th><g:message code="post.current.label" default="Current" /></th>
+					
 						<th><g:message code="post.member.label" default="Member" /></th>
 					
 					</tr>
@@ -32,7 +36,11 @@
 				<g:each in="${postInstanceList}" status="i" var="postInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${postInstance.id}">${fieldValue(bean: postInstance, field: "member")}</g:link></td>
+						<td><g:link action="show" id="${postInstance.id}">${fieldValue(bean: postInstance, field: "type")}</g:link></td>
+					
+						<td>${fieldValue(bean: postInstance, field: "current")}</td>
+					
+						<td>${fieldValue(bean: postInstance, field: "member")}</td>
 					
 					</tr>
 				</g:each>

@@ -30,8 +30,6 @@
 					
 						<th><g:message code="versionedPost.previous.label" default="Previous" /></th>
 					
-						<th><g:message code="versionedPost.post.label" default="Post" /></th>
-					
 						<g:sortableColumn property="title" title="${message(code: 'versionedPost.title.label', default: 'Title')}" />
 					
 					</tr>
@@ -45,8 +43,6 @@
 						<td><g:formatDate date="${versionedPostInstance.created}" /></td>
 					
 						<td>${fieldValue(bean: versionedPostInstance, field: "previous")}</td>
-					
-						<td>${fieldValue(bean: versionedPostInstance, field: "post")}</td>
 					
 						<td>${fieldValue(bean: versionedPostInstance, field: "title")}</td>
 					

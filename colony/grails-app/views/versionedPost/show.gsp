@@ -61,15 +61,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${versionedPostInstance?.post}">
-				<li class="fieldcontain">
-					<span id="post-label" class="property-label"><g:message code="versionedPost.post.label" default="Post" /></span>
-					
-						<span class="property-value" aria-labelledby="post-label"><g:link controller="post" action="show" id="${versionedPostInstance?.post?.id}">${versionedPostInstance?.post?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${versionedPostInstance?.tags}">
 				<li class="fieldcontain">
 					<span id="tags-label" class="property-label"><g:message code="versionedPost.tags.label" default="Tags" /></span>

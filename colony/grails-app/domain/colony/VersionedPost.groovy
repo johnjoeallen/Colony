@@ -6,8 +6,6 @@ class VersionedPost {
 	Date	created
 	VersionedPost previous
 	
-	static belongsTo = [post: Post]
-	
 	static hasMany = [comments: Comment, tags: Tag]
 	
 	static mapping = {

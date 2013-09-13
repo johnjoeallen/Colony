@@ -34,14 +34,6 @@
 	<g:select name="comments" from="${colony.Comment.list()}" multiple="multiple" optionKey="id" size="5" value="${versionedPostInstance?.comments*.id}" class="many-to-many"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'post', 'error')} required">
-	<label for="post">
-		<g:message code="versionedPost.post.label" default="Post" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="post" name="post.id" from="${colony.Post.list()}" optionKey="id" required="" value="${versionedPostInstance?.post?.id}" class="many-to-one"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'tags', 'error')} ">
 	<label for="tags">
 		<g:message code="versionedPost.tags.label" default="Tags" />

@@ -23,22 +23,29 @@
 			</g:if>
 			<ol class="property-list post">
 			
+				<g:if test="${postInstance?.type}">
+				<li class="fieldcontain">
+					<span id="type-label" class="property-label"><g:message code="post.type.label" default="Type" /></span>
+					
+						<span class="property-value" aria-labelledby="type-label"><g:fieldValue bean="${postInstance}" field="type"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postInstance?.current}">
+				<li class="fieldcontain">
+					<span id="current-label" class="property-label"><g:message code="post.current.label" default="Current" /></span>
+					
+						<span class="property-value" aria-labelledby="current-label"><g:link controller="versionedPost" action="show" id="${postInstance?.current?.id}">${postInstance?.current?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${postInstance?.member}">
 				<li class="fieldcontain">
 					<span id="member-label" class="property-label"><g:message code="post.member.label" default="Member" /></span>
 					
 						<span class="property-value" aria-labelledby="member-label"><g:link controller="member" action="show" id="${postInstance?.member?.id}">${postInstance?.member?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postInstance?.versions}">
-				<li class="fieldcontain">
-					<span id="versions-label" class="property-label"><g:message code="post.versions.label" default="Versions" /></span>
-					
-						<g:each in="${postInstance.versions}" var="v">
-						<span class="property-value" aria-labelledby="versions-label"><g:link controller="versionedPost" action="show" id="${v.id}">${v?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>
