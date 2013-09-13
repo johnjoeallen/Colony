@@ -7,7 +7,7 @@
 		<g:message code="versionedPost.content.label" default="Content" />
 		
 	</label>
-	<g:textField name="content" value="${versionedPostInstance?.content}"/>
+	<g:textArea name="content" value="${versionedPostInstance?.content}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'created', 'error')} required">

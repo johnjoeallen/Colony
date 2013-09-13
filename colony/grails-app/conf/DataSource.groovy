@@ -14,7 +14,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:postgresql://localhost:5432/colony"
+            url = "jdbc:postgresql://wildcat:5432/colony"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
 
             driverClassName = "org.postgresql.Driver"
@@ -44,7 +44,7 @@ environments {
     test {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:postgresql://localhost:5432/colony"
+            url = "jdbc:postgresql://wildcat:5432/colony"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
 
             driverClassName = "org.postgresql.Driver"
@@ -74,7 +74,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:postgresql://localhost:5432/colony"
+            url = "jdbc:postgresql://wildcat:5432/colony"
             dialect = "org.hibernate.dialect.PostgreSQLDialect"
 
             driverClassName = "org.postgresql.Driver"

@@ -4,6 +4,8 @@ class UiController {
 
     def index()
 	{
-		render (view: "index")
+		def m = [:]
+		m.posts = Post.getAll()
+		render (view: "index", model: m)
 	}
 }
