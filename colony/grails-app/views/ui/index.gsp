@@ -92,7 +92,7 @@
 				</li>
 				<li><a href="#">Help</a></li>
 				<li class="field"><input class="search input" type="search" placeholder="Search" /></li>
-				<li><div class="pretty medium primary btn"><a href="#">Login</a></div></li>
+				<li><div class="pretty small primary btn"><a href="#">Login</a></div></li>
 			</ul>
 		</div>
 	</div>
@@ -116,6 +116,7 @@
 	  					<div class="status">
 		  					<ul class="six columns">
 								<li><textarea class="input textarea" placeholder="Status update" rows="3" columns="80"></textarea></li>
+								<li><div class="pretty small primary btn"><a href="#">Post</a></div></li>
 							</ul>
 						</div>
 					</div>
