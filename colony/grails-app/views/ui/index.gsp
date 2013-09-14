@@ -35,10 +35,10 @@
 
 	<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 			 However, there is a blank style.css in the css directory should you prefer -->
-	<link rel="stylesheet" href="components/gumby/css/gumby.css">
+	<link rel="stylesheet" href="/colony/components/gumby/css/gumby.css">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
-	<script src="components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
+	<script src="/colony/components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 
 <style>
@@ -51,10 +51,22 @@
 	.modal h2, .modal .btn { margin: 5% 0 20px; }
 	.content { margin-top: 60px; }
 	.status { margin-top: 6px; }
+	h1, h2, h3, h4, h5, h6 { 
+		font-weight: 500; padding-bottom: 0px; color: rgb(51,51,50); }
 	h1 { font-size: 1.8rem; }
-	.posts h2 { font-size: 1.8rem; padding-bottom: 0px; }
-	p { font-size: .7rem; }
-	.posts.author.title { font-size: .8rem; margin-bottom: 22px; padding-bottom: 22px; }
+	h2 { font-size: 1.6rem; }
+	.posts { margin-bottom: 8px; color: rgb(51,51,50); }
+	.posts.author.title { 
+		font-size: .8rem; margin-bottom: 8px; padding-bottom: 8px; color: rgb(51,51,50); }
+	.postbody {
+		padding-left: 8px;
+		border-left: 1px dotted #ccc; 
+		border-bottom: 1px dotted #ccc; 
+		font-weight: normal; 
+		font-size: .9rem; 
+		color: rgb(51,51,50); }
+	.postbody p { 
+		font-weight: normal; font-size: .9rem; border-bottom: 0px; color: rgb(51,51,50); }
 	.navbar { min-height: 40px; }
 </style>
 
@@ -77,7 +89,7 @@
 			<a class="toggle" gumby-trigger="#nav3 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="#">
-					<img src="images/colony-logo.png" gumby-retina />
+					<img src="/colony/images/colony-logo.png" gumby-retina />
 				</a>
 			</h1>
 			<ul class="eight columns">
@@ -111,7 +123,10 @@
 		
 		<div class="row">
 			<div class="two columns">
-				<p>Colonies</p>
+				<p><b>COLONIES</b></p>
+				<g:each in="${colonies}" var="colony">
+					<p><a href="${createLink(controller: "ui", action: 'colony', params: [id: colony.id])}">${colony.name}</a></p>
+				</g:each>
 			</div>
 			<div class="eight columns">
 				<div class="row">
@@ -168,9 +183,9 @@
 	<script src="components/gumby/js/libs/ui/jquery.validation.js"></script>
 	<script src="components/gumby/js/libs/gumby.init.js"></script> -->
 
-	<script src="components/gumby/js/libs/gumby.min.js"></script>
-	<script src="components/gumby/js/plugins.js"></script>
-	<script src="components/gumby/js/main.js"></script>
+	<script src="/colony/components/gumby/js/libs/gumby.min.js"></script>
+	<script src="/colony/components/gumby/js/plugins.js"></script>
+	<script src="/colony/components/gumby/js/main.js"></script>
 
 	<!-- Change UA-XXXXX-X to be your site's ID -->
 	<!--<script>

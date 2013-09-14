@@ -21,7 +21,7 @@ environments {
             username = "colony"
             password = "colony"
 
-            logSql = false
+            logSql = true
 
             properties { //db connection pool settings
                 maxActive = 50
