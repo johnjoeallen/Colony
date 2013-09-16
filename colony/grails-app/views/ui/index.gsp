@@ -60,13 +60,16 @@
 		font-size: .8rem; margin-bottom: 8px; padding-bottom: 8px; color: rgb(51,51,50); }
 	.postbody {
 		padding-left: 8px;
-		border-left: 1px dotted #ccc; 
+		#border-left: 1px dotted #ccc; 
 		border-bottom: 1px dotted #ccc; 
 		font-weight: normal; 
 		font-size: .9rem; 
 		color: rgb(51,51,50); }
 	.postbody p { 
 		font-weight: normal; font-size: .9rem; border-bottom: 0px; color: rgb(51,51,50); }
+	.postbody ul { list-style-type: disc; }
+	.postbody blockquote { font-style: italic; }
+	.postbody cite { font-style: italic; font-size: .6rem}
 	.navbar { min-height: 40px; }
 </style>
 

@@ -15,13 +15,6 @@ class UiController
 		Member member = Member.getAll().first()
 		List<Colony> colonies = null
 
-		//		colonies = Colony.findAllByMembersAndId()
-		//		colonies = c.get {
-		//		   members {
-		//			  idEq(member.id)
-		//		   }
-		//		}
-
 		model.colonies = Colony.withCriteria {
 			members {
 				eq('id', member.id)
