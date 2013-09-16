@@ -21,14 +21,23 @@ class UiController
 			}
 		}
 
-		if (params.id)
+		if (params.colony)
 		{
-			def colonyId = params.id
+			model.colonies.each
+			{ Colony colony ->
+				if (colony.name.equalsIgnoreCase(params.colony))
+				{
+					model.colony = colony
+				}
+			}
+
+		}
+		else if (params.id)
+		{
 			model.colonies.each 
 			{ Colony colony ->
-				if (colony.id == colonyId)
+				if (colony.id == params.id)
 				{
-					println "${colony.id} -- ${colonyId}"
 					model.colony = colony
 				}
 			}

@@ -8,6 +8,8 @@ class UrlMappings {
 		}
 
 		"/"(controller:"ui")
+		"/@$colony"(controller:"ui")
+		"/ui/@$colony"(controller:"ui")
 		"/admin"(view: "/index")
 		"500"(view:'/error')
 	}
