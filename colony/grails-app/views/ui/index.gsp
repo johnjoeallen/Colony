@@ -52,24 +52,24 @@
 	.content { margin-top: 60px; }
 	.status { margin-top: 6px; }
 	h1, h2, h3, h4, h5, h6 { 
-		font-weight: 500; padding-bottom: 0px; color: rgb(51,51,50); }
-	h1 { font-size: 1.8rem; }
-	h2 { font-size: 1.6rem; }
+		font-weight: 400; padding-bottom: 0px; color: rgb(51,51,50); }
+	h1 { font-size: 1.5rem; }
+	h2 { font-size: 1.3rem; }
 	.posts { margin-bottom: 8px; color: rgb(51,51,50); }
 	.posts.author.title { 
-		font-size: .8rem; margin-bottom: 8px; padding-bottom: 8px; color: rgb(51,51,50); }
+		font-size: .7rem; margin-bottom: 8px; padding-bottom: 8px; color: rgb(51,51,50); }
 	.postbody {
 		padding-left: 8px;
 		#border-left: 1px dotted #ccc; 
 		border-bottom: 1px dotted #ccc; 
 		font-weight: normal; 
-		font-size: .9rem; 
+		font-size: .8rem; 
 		color: rgb(51,51,50); }
 	.postbody p { 
-		font-weight: normal; font-size: .9rem; border-bottom: 0px; color: rgb(51,51,50); }
+		font-weight: normal; font-size: .8rem; border-bottom: 0px; color: rgb(51,51,50); }
 	.postbody ul { list-style-type: disc; }
 	.postbody blockquote { font-style: italic; }
-	.postbody cite { font-style: italic; font-size: .6rem}
+	.postbody cite { font-style: italic; font-size: .5rem}
 	.navbar { min-height: 40px; }
 </style>
 
