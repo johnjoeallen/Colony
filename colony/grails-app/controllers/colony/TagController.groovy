@@ -30,7 +30,7 @@ class TagController {
         redirect(action: "show", id: tagInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
@@ -41,7 +41,7 @@ class TagController {
         [tagInstance: tagInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
@@ -52,7 +52,7 @@ class TagController {
         [tagInstance: tagInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])
@@ -81,7 +81,7 @@ class TagController {
         redirect(action: "show", id: tagInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def tagInstance = Tag.get(id)
         if (!tagInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'tag.label', default: 'Tag'), id])

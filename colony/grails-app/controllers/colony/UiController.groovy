@@ -23,7 +23,7 @@ class UiController
 
 		if (params.id)
 		{
-			Long colonyId = params.id as Long
+			def colonyId = params.id
 			model.colonies.each 
 			{ Colony colony ->
 				if (colony.id == colonyId)

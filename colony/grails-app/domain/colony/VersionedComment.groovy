@@ -2,7 +2,9 @@ package colony
 
 import java.util.Date;
 
-class VersionedComment {
+class VersionedComment 
+{
+	String id
 	String content
 	Date	created
 	VersionedComment previous
@@ -10,6 +12,7 @@ class VersionedComment {
 	static belongsTo = [comment: Comment]
 	
 	static mapping = {
+		id generator: 'uuid'
 		content sqlType: "text"
 	}
 	

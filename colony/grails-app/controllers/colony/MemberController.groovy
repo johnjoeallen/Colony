@@ -30,7 +30,7 @@ class MemberController {
         redirect(action: "show", id: memberInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def memberInstance = Member.get(id)
         if (!memberInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), id])
@@ -41,7 +41,7 @@ class MemberController {
         [memberInstance: memberInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def memberInstance = Member.get(id)
         if (!memberInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), id])
@@ -52,7 +52,7 @@ class MemberController {
         [memberInstance: memberInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def memberInstance = Member.get(id)
         if (!memberInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), id])
@@ -81,7 +81,7 @@ class MemberController {
         redirect(action: "show", id: memberInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def memberInstance = Member.get(id)
         if (!memberInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), id])

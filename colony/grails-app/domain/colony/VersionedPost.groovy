@@ -1,6 +1,7 @@
 package colony
 
 class VersionedPost {
+	String id
 	String title
 	String content
 	Date	created
@@ -9,6 +10,7 @@ class VersionedPost {
 	static hasMany = [comments: Comment, tags: Tag]
 	
 	static mapping = {
+		id generator: 'uuid'
 		content sqlType: "text"
 	}
 	

@@ -30,7 +30,7 @@ class ColonyController {
         redirect(action: "show", id: colonyInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def colonyInstance = Colony.get(id)
         if (!colonyInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'colony.label', default: 'Colony'), id])
@@ -41,7 +41,7 @@ class ColonyController {
         [colonyInstance: colonyInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def colonyInstance = Colony.get(id)
         if (!colonyInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'colony.label', default: 'Colony'), id])
@@ -52,7 +52,7 @@ class ColonyController {
         [colonyInstance: colonyInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def colonyInstance = Colony.get(id)
         if (!colonyInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'colony.label', default: 'Colony'), id])
@@ -81,7 +81,7 @@ class ColonyController {
         redirect(action: "show", id: colonyInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def colonyInstance = Colony.get(id)
         if (!colonyInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'colony.label', default: 'Colony'), id])

@@ -30,7 +30,7 @@ class VersionedCommentController {
         redirect(action: "show", id: versionedCommentInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def versionedCommentInstance = VersionedComment.get(id)
         if (!versionedCommentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedComment.label', default: 'VersionedComment'), id])
@@ -41,7 +41,7 @@ class VersionedCommentController {
         [versionedCommentInstance: versionedCommentInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def versionedCommentInstance = VersionedComment.get(id)
         if (!versionedCommentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedComment.label', default: 'VersionedComment'), id])
@@ -52,7 +52,7 @@ class VersionedCommentController {
         [versionedCommentInstance: versionedCommentInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def versionedCommentInstance = VersionedComment.get(id)
         if (!versionedCommentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedComment.label', default: 'VersionedComment'), id])
@@ -81,7 +81,7 @@ class VersionedCommentController {
         redirect(action: "show", id: versionedCommentInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def versionedCommentInstance = VersionedComment.get(id)
         if (!versionedCommentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedComment.label', default: 'VersionedComment'), id])

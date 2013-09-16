@@ -30,7 +30,7 @@ class CommentController {
         redirect(action: "show", id: commentInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def commentInstance = Comment.get(id)
         if (!commentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'comment.label', default: 'Comment'), id])
@@ -41,7 +41,7 @@ class CommentController {
         [commentInstance: commentInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def commentInstance = Comment.get(id)
         if (!commentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'comment.label', default: 'Comment'), id])
@@ -52,7 +52,7 @@ class CommentController {
         [commentInstance: commentInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def commentInstance = Comment.get(id)
         if (!commentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'comment.label', default: 'Comment'), id])
@@ -81,7 +81,7 @@ class CommentController {
         redirect(action: "show", id: commentInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def commentInstance = Comment.get(id)
         if (!commentInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'comment.label', default: 'Comment'), id])

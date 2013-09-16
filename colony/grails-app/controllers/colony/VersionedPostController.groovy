@@ -30,7 +30,7 @@ class VersionedPostController {
         redirect(action: "show", id: versionedPostInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def versionedPostInstance = VersionedPost.get(id)
         if (!versionedPostInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedPost.label', default: 'VersionedPost'), id])
@@ -41,7 +41,7 @@ class VersionedPostController {
         [versionedPostInstance: versionedPostInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def versionedPostInstance = VersionedPost.get(id)
         if (!versionedPostInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedPost.label', default: 'VersionedPost'), id])
@@ -52,7 +52,7 @@ class VersionedPostController {
         [versionedPostInstance: versionedPostInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def versionedPostInstance = VersionedPost.get(id)
         if (!versionedPostInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedPost.label', default: 'VersionedPost'), id])
@@ -81,7 +81,7 @@ class VersionedPostController {
         redirect(action: "show", id: versionedPostInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def versionedPostInstance = VersionedPost.get(id)
         if (!versionedPostInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'versionedPost.label', default: 'VersionedPost'), id])

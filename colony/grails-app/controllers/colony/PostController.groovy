@@ -30,7 +30,7 @@ class PostController {
         redirect(action: "show", id: postInstance.id)
     }
 
-    def show(Long id) {
+    def show(String id) {
         def postInstance = Post.get(id)
         if (!postInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), id])
@@ -41,7 +41,7 @@ class PostController {
         [postInstance: postInstance]
     }
 
-    def edit(Long id) {
+    def edit(String id) {
         def postInstance = Post.get(id)
         if (!postInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), id])
@@ -52,7 +52,7 @@ class PostController {
         [postInstance: postInstance]
     }
 
-    def update(Long id, Long version) {
+    def update(String id, Long version) {
         def postInstance = Post.get(id)
         if (!postInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), id])
@@ -81,7 +81,7 @@ class PostController {
         redirect(action: "show", id: postInstance.id)
     }
 
-    def delete(Long id) {
+    def delete(String id) {
         def postInstance = Post.get(id)
         if (!postInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), id])
