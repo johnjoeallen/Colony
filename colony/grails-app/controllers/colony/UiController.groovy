@@ -22,7 +22,7 @@ class UiController
 	
 			if (colonies.size() == 0)
 			{
-				// new user, ass them to the default colony "Colony"
+				// new user, add them to the default colony "Colony"
 				Colony colony = Colony.findWhere([name: "Colony"])
 				
 				if (colony == null)
@@ -50,6 +50,17 @@ class UiController
 		model.member = springSecurityService.currentUser
 		 
 		render (view: "newPost", model: model)
+	}
+	
+	def savePost()
+	{
+		params.each { k, v ->
+			println "${k} = ${v}"
+		}
+		
+		colonyService.createPost(params.title, params.content, params.colony)
+		
+		return colony()
 	}
 	
 	def colony()
