@@ -7,7 +7,7 @@
 		<g:message code="versionedPost.content.label" default="Content" />
 		
 	</label>
-	<g:textArea name="content" rows="60" cols="100" value="${versionedPostInstance?.content}"/>
+	<g:textArea name="content" value="${versionedPostInstance?.content}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'created', 'error')} required">
@@ -24,6 +24,14 @@
 		
 	</label>
 	<g:select id="previous" name="previous.id" from="${colony.VersionedPost.list()}" optionKey="id" value="${versionedPostInstance?.previous?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'member', 'error')} ">
+	<label for="member">
+		<g:message code="versionedPost.member.label" default="Member" />
+		
+	</label>
+	<g:select id="member" name="member.id" from="${colony.Member.list()}" optionKey="id" value="${versionedPostInstance?.member?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: versionedPostInstance, field: 'comments', 'error')} ">

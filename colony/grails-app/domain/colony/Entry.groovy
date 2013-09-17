@@ -1,17 +1,16 @@
 package colony
 
-class Comment {
+import java.util.Date;
+
+class Entry {
 	String id
-	String content
+	Post post
 	Date created = new Date()
-	
-	static belongsTo = [member: Member]
-	static hasMany = [versions: VersionedComment]
 	
 	static mapping = {
 		id generator: 'uuid'
 	}
-		
+	
     static constraints = {
     }
 }

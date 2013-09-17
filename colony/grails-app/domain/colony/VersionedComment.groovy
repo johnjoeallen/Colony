@@ -6,7 +6,7 @@ class VersionedComment
 {
 	String id
 	String content
-	Date	created
+	Date	created = new Date()
 	VersionedComment previous
 	
 	static belongsTo = [comment: Comment]

@@ -94,7 +94,7 @@
 		<div class="row">
 			<a class="toggle" gumby-trigger="#nav3 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
-				<a href="@${colony.name}"><img src="/colony/images/colony-logo.png" gumby-retina />${colony.name}</a>
+				<a href="@${colony?.name}"><img src="/colony/images/colony-logo.png" gumby-retina />${colony?.name}</a>
 			</h1>
 			<ul class="eight columns">
 				<li>
@@ -126,10 +126,11 @@
 		-->
 		
 		<div class="row">
+			<!-- 
 			<div class="two columns">
 				<p><b>COLONIES</b></p>
 				<g:each in="${colonies}" var="c">
-					<g:if test="${c.name == colony.name}">
+					<g:if test="${c.name == colony?.name}">
 						<p class="colony selected"><a href="@${c.name}">${c.name}</a></p>
 					</g:if>
 					<g:else>
@@ -137,10 +138,12 @@
 					</g:else>
 				</g:each>
 			</div>
-			<div class="eight columns">
+			-->
+			
+			<div class="ten columns">
 				<div class="row">
-					<g:each in="${colony.posts}" var="post">
-						<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post,'current':post.current]"/>
+					<g:each in="${posts}" var="post">
+						<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post, 'current':post.current]"/>
 					</g:each>
 				</div>
 			</div>

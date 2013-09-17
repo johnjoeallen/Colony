@@ -23,6 +23,26 @@
 			</g:if>
 			<ol class="property-list colony">
 			
+				<g:if test="${colonyInstance?.created}">
+				<li class="fieldcontain">
+					<span id="created-label" class="property-label"><g:message code="colony.created.label" default="Created" /></span>
+					
+						<span class="property-value" aria-labelledby="created-label"><g:formatDate date="${colonyInstance?.created}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${colonyInstance?.entries}">
+				<li class="fieldcontain">
+					<span id="entries-label" class="property-label"><g:message code="colony.entries.label" default="Entries" /></span>
+					
+						<g:each in="${colonyInstance.entries}" var="e">
+						<span class="property-value" aria-labelledby="entries-label"><g:link controller="entry" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${colonyInstance?.members}">
 				<li class="fieldcontain">
 					<span id="members-label" class="property-label"><g:message code="colony.members.label" default="Members" /></span>
@@ -39,17 +59,6 @@
 					<span id="name-label" class="property-label"><g:message code="colony.name.label" default="Name" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${colonyInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${colonyInstance?.posts}">
-				<li class="fieldcontain">
-					<span id="posts-label" class="property-label"><g:message code="colony.posts.label" default="Posts" /></span>
-					
-						<g:each in="${colonyInstance.posts}" var="p">
-						<span class="property-value" aria-labelledby="posts-label"><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>

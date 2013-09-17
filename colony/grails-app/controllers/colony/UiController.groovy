@@ -43,10 +43,36 @@ class UiController
 			}
 		}
 		
-		if (model.colony == null)
-		{
-			model.colony = model.colonies.first()
+		model.posts = [:]
+			
+		model.colonies.each
+		{ Colony colony ->
+			colony.entries.each
+			{ Entry entry ->
+				if (!model.posts[entry.post.id])
+				{
+					model.posts[entry.post.id] = entry.post
+				}
+				
+				model.posts[entry.post.id].colonies.put(colony.name, colony)
+			}
 		}
+		
+		model.posts = model.posts.findAll 
+		{ String key, Post post ->
+			VersionedPost version = post.current
+
+			if (!model.colony || post.colonies.get(model.colony.name))
+			{			
+				while (version)
+				{
+					post.members.put(version.member.fullname, version.member)
+					version = version.previous
+				}
+				
+				post
+			} 
+		}.collect { k, v -> v }
 		
 		render (view: "index", model: model)
 	}

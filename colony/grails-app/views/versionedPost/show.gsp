@@ -50,6 +50,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${versionedPostInstance?.member}">
+				<li class="fieldcontain">
+					<span id="member-label" class="property-label"><g:message code="versionedPost.member.label" default="Member" /></span>
+					
+						<span class="property-value" aria-labelledby="member-label"><g:link controller="member" action="show" id="${versionedPostInstance?.member?.id}">${versionedPostInstance?.member?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${versionedPostInstance?.comments}">
 				<li class="fieldcontain">
 					<span id="comments-label" class="property-label"><g:message code="versionedPost.comments.label" default="Comments" /></span>
