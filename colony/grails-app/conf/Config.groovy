@@ -91,3 +91,19 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails.plugins.springsecurity.twitter.consumerKey='N6lmWbBOdkFjs5YHkYhUvA'
+grails.plugins.springsecurity.twitter.consumerSecret='ETVXmIHxFPLjGx47MxzgVLKiTPcBBaG9GeSyZKqs'
+grails.plugins.springsecurity.twitter.domain.classname='colony.TwitterMember'
+
+grails.plugins.springsecurity.facebook.domain.classname='FacebookUser'
+grails.plugins.springsecurity.facebook.appId='647614211929957'
+grails.plugins.springsecurity.facebook.secret='26ed3e4b0f16ea31746fd17234e9a13d'
+grails.plugins.springsecurity.facebook.domain.classname='colony.FacebookUser'
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'colony.Member'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'colony.MemberRole'
+grails.plugins.springsecurity.authority.className = 'colony.Role'
+grails.plugins.springsecurity.requestMap.className = 'colony.Requestmap'
+grails.plugins.springsecurity.securityConfigType = 'Requestmap'

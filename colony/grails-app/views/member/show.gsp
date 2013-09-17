@@ -23,11 +23,56 @@
 			</g:if>
 			<ol class="property-list member">
 			
+				<g:if test="${memberInstance?.username}">
+				<li class="fieldcontain">
+					<span id="username-label" class="property-label"><g:message code="member.username.label" default="Username" /></span>
+					
+						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${memberInstance}" field="username"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${memberInstance?.password}">
+				<li class="fieldcontain">
+					<span id="password-label" class="property-label"><g:message code="member.password.label" default="Password" /></span>
+					
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${memberInstance}" field="password"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${memberInstance?.accountExpired}">
+				<li class="fieldcontain">
+					<span id="accountExpired-label" class="property-label"><g:message code="member.accountExpired.label" default="Account Expired" /></span>
+					
+						<span class="property-value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${memberInstance?.accountExpired}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${memberInstance?.accountLocked}">
+				<li class="fieldcontain">
+					<span id="accountLocked-label" class="property-label"><g:message code="member.accountLocked.label" default="Account Locked" /></span>
+					
+						<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${memberInstance?.accountLocked}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${memberInstance?.created}">
 				<li class="fieldcontain">
 					<span id="created-label" class="property-label"><g:message code="member.created.label" default="Created" /></span>
 					
 						<span class="property-value" aria-labelledby="created-label"><g:formatDate date="${memberInstance?.created}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${memberInstance?.enabled}">
+				<li class="fieldcontain">
+					<span id="enabled-label" class="property-label"><g:message code="member.enabled.label" default="Enabled" /></span>
+					
+						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${memberInstance?.enabled}" /></span>
 					
 				</li>
 				</g:if>
@@ -41,20 +86,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${memberInstance?.identity}">
-				<li class="fieldcontain">
-					<span id="identity-label" class="property-label"><g:message code="member.identity.label" default="Identity" /></span>
-					
-						<span class="property-value" aria-labelledby="identity-label"><g:fieldValue bean="${memberInstance}" field="identity"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${memberInstance?.lastLogin}">
 				<li class="fieldcontain">
 					<span id="lastLogin-label" class="property-label"><g:message code="member.lastLogin.label" default="Last Login" /></span>
 					
 						<span class="property-value" aria-labelledby="lastLogin-label"><g:formatDate date="${memberInstance?.lastLogin}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${memberInstance?.passwordExpired}">
+				<li class="fieldcontain">
+					<span id="passwordExpired-label" class="property-label"><g:message code="member.passwordExpired.label" default="Password Expired" /></span>
+					
+						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${memberInstance?.passwordExpired}" /></span>
 					
 				</li>
 				</g:if>

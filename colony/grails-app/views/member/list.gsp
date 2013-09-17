@@ -24,13 +24,17 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="username" title="${message(code: 'member.username.label', default: 'Username')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'member.password.label', default: 'Password')}" />
+					
+						<g:sortableColumn property="accountExpired" title="${message(code: 'member.accountExpired.label', default: 'Account Expired')}" />
+					
+						<g:sortableColumn property="accountLocked" title="${message(code: 'member.accountLocked.label', default: 'Account Locked')}" />
+					
 						<g:sortableColumn property="created" title="${message(code: 'member.created.label', default: 'Created')}" />
 					
-						<g:sortableColumn property="fullname" title="${message(code: 'member.fullname.label', default: 'Fullname')}" />
-					
-						<g:sortableColumn property="identity" title="${message(code: 'member.identity.label', default: 'Identity')}" />
-					
-						<g:sortableColumn property="lastLogin" title="${message(code: 'member.lastLogin.label', default: 'Last Login')}" />
+						<g:sortableColumn property="enabled" title="${message(code: 'member.enabled.label', default: 'Enabled')}" />
 					
 					</tr>
 				</thead>
@@ -38,13 +42,17 @@
 				<g:each in="${memberInstanceList}" status="i" var="memberInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${memberInstance.id}">${fieldValue(bean: memberInstance, field: "created")}</g:link></td>
+						<td><g:link action="show" id="${memberInstance.id}">${fieldValue(bean: memberInstance, field: "username")}</g:link></td>
 					
-						<td>${fieldValue(bean: memberInstance, field: "fullname")}</td>
+						<td>${fieldValue(bean: memberInstance, field: "password")}</td>
 					
-						<td>${fieldValue(bean: memberInstance, field: "identity")}</td>
+						<td><g:formatBoolean boolean="${memberInstance.accountExpired}" /></td>
 					
-						<td><g:formatDate date="${memberInstance.lastLogin}" /></td>
+						<td><g:formatBoolean boolean="${memberInstance.accountLocked}" /></td>
+					
+						<td><g:formatDate date="${memberInstance.created}" /></td>
+					
+						<td><g:formatBoolean boolean="${memberInstance.enabled}" /></td>
 					
 					</tr>
 				</g:each>

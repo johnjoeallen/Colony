@@ -36,7 +36,11 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
-    }
+		
+		mavenRepo "http://maven.springframework.org/release/"
+		mavenRepo "http://repository.springsource.com/maven/bundles/release/"
+		mavenRepo "http://repository.springsource.com/maven/bundles/external/"
+	}
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
@@ -61,5 +65,8 @@ grails.project.dependency.resolution = {
 
         compile ':cache:1.0.1'
 		compile ':markdown:1.1.1'
+		compile ':spring-security-core:1.2.7.3'
+		compile ":spring-security-twitter:0.5.4"
+		compile ":spring-security-facebook:0.15"
     }
 }

@@ -74,6 +74,7 @@
 	.four.columns.logo a { color: white; font-style: italic; vertical-align: top; }
 	.colony.selected a { font-style: italic; font-size: 1rem }
 	.colony.notselected a { font-style: normal; font-size: .8rem }
+	.username p { font-style: normal; color: rgb(200,200,200); font-size: .5rem }
 </style>
 
 <body>
@@ -94,7 +95,7 @@
 		<div class="row">
 			<a class="toggle" gumby-trigger="#nav3 > .row > ul" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
-				<a href="@${colony?.name}"><img src="/colony/images/colony-logo.png" gumby-retina />${colony?.name}</a>
+				<a href="/colony/"><img src="/colony/images/colony-logo.png" gumby-retina />${colony?.name}</a>
 			</h1>
 			<ul class="eight columns">
 				<li>
@@ -111,46 +112,48 @@
 				</li>
 				<li><a href="#">Help</a></li>
 				<li class="field"><input class="search input" type="search" placeholder="Search" /></li>
-				<li><div class="pretty small primary btn"><a href="#">Login</a></div></li>
+				<li>
+					<g:if test="${member == null}">
+						<div class="pretty small primary btn"><a href="j_spring_twitter_security_check">Login with Twitter</a></div>
+					</g:if>
+					<g:else>
+						<div class="pretty small primary btn"><a href="#">${member.username}</a></div>
+					</g:else>
+				</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="content">
-		<!-- 
-		<div class="row">
-		    <div class="fourteen columns">
-		      <p>Welcome to Colony</p>
-		    </div>
-		</div>
-		-->
-		
-		<div class="row">
-			<!-- 
-			<div class="two columns">
-				<p><b>COLONIES</b></p>
-				<g:each in="${colonies}" var="c">
-					<g:if test="${c.name == colony?.name}">
-						<p class="colony selected"><a href="@${c.name}">${c.name}</a></p>
-					</g:if>
-					<g:else>
-						<p class="colony notselected"><a href="@${c.name}">${c.name}</a></p>
-					</g:else>
-				</g:each>
-			</div>
-			-->
-			
-			<div class="ten columns">
-				<div class="row">
-					<g:each in="${posts}" var="post">
-						<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post, 'current':post.current]"/>
+	
+		<g:if test="${member != null}">
+			<div class="row">
+				<!-- 
+				<div class="two columns">
+					<p><b>COLONIES</b></p>
+					<g:each in="${colonies}" var="c">
+						<g:if test="${c.name == colony?.name}">
+							<p class="colony selected"><a href="@${c.name}">${c.name}</a></p>
+						</g:if>
+						<g:else>
+							<p class="colony notselected"><a href="@${c.name}">${c.name}</a></p>
+						</g:else>
 					</g:each>
 				</div>
+				-->
+				
+				<div class="ten columns">
+					<div class="row">
+						<g:each in="${posts}" var="post">
+							<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post, 'current':post.current]"/>
+						</g:each>
+					</div>
+				</div>
+				<div class="two columns">
+					<p>Profile</p>
+				</div>
 			</div>
-			<div class="two columns">
-				<p>Profile</p>
-			</div>
-		</div>
+		</g:if>
   	</div>
 		
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
