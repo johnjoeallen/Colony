@@ -8,6 +8,8 @@ class UrlMappings {
 		}
 
 		"/"(controller:"ui")
+		"/newPost"(controller:"ui", action="newPost")
+		"/ui/savePost"(controller:"ui", action="savePost")
 		"/$colony"(controller:"ui")
 		"/@$user"(controller:"ui")
 		"/admin"(view: "/index")

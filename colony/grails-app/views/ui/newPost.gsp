@@ -125,31 +125,24 @@
 	</div>
 
 	<div class="content">
-		<g:if test="${member != null}">
-			<div class="row">
-				<div class="ten columns">
+		<div class="row">
+			<div class="ten columns">
+				<g:if test="${member != null}">
 					<div class="row">
-						<g:each in="${posts}" var="post">
-							<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post, 'current':post.current]"/>
-						</g:each>
+						<g:form action="savePost" >
+							<fieldset class="new_post_form">
+								<g:render template="new_post_form"/>
+							</fieldset>
+							<fieldset class="buttons">
+								<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+							</fieldset>
+						</g:form>
 					</div>
-				</div>
-				<div class="two columns">
-					<p>Profile</p>
-				</div>
+				</g:if>
 			</div>
-		</g:if>
-		<g:else>
-			<div class="row">
-				<div class="ten columns">
-					<div class="row">
-						<markdown:renderHtml><g:render template="colony"/></markdown:renderHtml>
-					</div>
-				</div>
-			</div>
-		</g:else>
+		</div>
   	</div>
-
+		
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
 	<!-- 2.0 for modern browsers, 1.10 for .oldie -->
 	<script>

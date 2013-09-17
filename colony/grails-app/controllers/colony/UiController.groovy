@@ -5,29 +5,61 @@ import org.grails.datastore.mapping.query.api.Criteria
 class UiController
 {
 	def springSecurityService
+	def colonyService
+	
+	List<Colony> getMembersColonies()
+	{
+		List<Colony> colonies
+		Member member = springSecurityService.currentUser
+		
+		if (member != null)
+		{
+			colonies = Colony.withCriteria {
+				members {
+					eq('id', member.id)
+				}
+			}
+	
+			if (colonies.size() == 0)
+			{
+				// new user, ass them to the default colony "Colony"
+				Colony colony = Colony.findWhere([name: "Colony"])
+				
+				if (colony == null)
+				{
+					// create the default Colony
+					colony = colonyService.createColony("Colony")
+				}
+				
+				colonyService.addMember(colony, member);
+				colonies.add(colony)
+			}
+		}
+		
+		return colonies
+	}
 	
 	def index()
 	{
 		return colony()
 	}
 	
+	def newPost()
+	{
+		def model = [:]
+		model.member = springSecurityService.currentUser
+		 
+		render (view: "newPost", model: model)
+	}
+	
 	def colony()
 	{
 		def model = [:]
 		model.member = springSecurityService.currentUser 
-		
-		println model.member
+		model.colonies = getMembersColonies()
 		
 		if (model.member != null)
 		{
-			List<Colony> colonies = null
-	
-			model.colonies = Colony.withCriteria {
-				members {
-					eq('id', model.member.id)
-				}
-			}
-	
 			if (params.colony)
 			{
 				model.colonies.each
