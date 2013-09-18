@@ -7,20 +7,20 @@ class UiController
 	def springSecurityService
 	def colonyService
 	
-	List<Colony> getMembersColonies()
+	Map<String, Colony> getMembersColonies()
 	{
-		List<Colony> colonies
+		LinkedHashMap<String, Colony> colonies = new LinkedHashMap<String, Colony>() 
 		Member member = springSecurityService.currentUser
 		
 		if (member != null)
 		{
-			colonies = Colony.withCriteria {
+			def membersColonies = Colony.withCriteria {
 				members {
 					eq('id', member.id)
 				}
 			}
 	
-			if (colonies.size() == 0)
+			if (membersColonies.size() == 0)
 			{
 				// new user, add them to the default colony "Colony"
 				Colony colony = Colony.findWhere([name: "Colony"])
@@ -32,7 +32,15 @@ class UiController
 				}
 				
 				colonyService.addMember(colony, member);
-				colonies.add(colony)
+				colonies.put(colony.id, colony)
+			}
+			else
+			{
+				membersColonies.each 
+				{ Colony colony ->
+					colonies.put(colony.id, colony)
+				}
+				
 			}
 		}
 		
@@ -58,7 +66,7 @@ class UiController
 			println "${k} = ${v}"
 		}
 		
-		colonyService.createPost(params.title, params.content, params.colony)
+		colonyService.createPost(params.title, params.content, params.colonies.id)
 		
 		return colony()
 	}
@@ -74,7 +82,7 @@ class UiController
 			if (params.colony)
 			{
 				model.colonies.each
-				{ Colony colony ->
+				{ String id, Colony colony ->
 					if (colony.name.equalsIgnoreCase(params.colony))
 					{
 						model.colony = colony
@@ -85,7 +93,7 @@ class UiController
 			else if (params.id)
 			{
 				model.colonies.each 
-				{ Colony colony ->
+				{ String id, Colony colony ->
 					if (colony.id == params.id)
 					{
 						model.colony = colony
@@ -93,12 +101,15 @@ class UiController
 				}
 			}
 			
-			model.posts = [:]
+			model.posts = new LinkedHashMap<String, Post>()
 				
-			model.colonies.each
-			{ Colony colony ->
-				colony.entries.each
-				{ Entry entry ->
+			Entry.executeQuery("SELECT id FROM Entry ORDER BY created DESC").each
+			{ entryId ->
+				Entry entry = Entry.findById(entryId)
+				println entry
+				Colony colony = model.colonies[entry.colony.id]
+				if (colony)
+				{
 					if (!model.posts[entry.post.id])
 					{
 						model.posts[entry.post.id] = entry.post

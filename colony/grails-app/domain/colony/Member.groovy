@@ -1,10 +1,12 @@
 package colony
 
-class Member {
+class Member
+{
 
 	transient springSecurityService
 	String id
 	String username
+	String nickname
 	String email
 	String fullname
 	String password
@@ -15,49 +17,68 @@ class Member {
 	Date created = new Date()
 	Date lastLogin = new Date()
 
-	Member()
-	{
-		email = "*"
-		fullname = "*"
-	}
-	
 	static hasMany = [posts: Post]
-	
-	static constraints = {
+
+	static constraints =
+	{
 		username blank: false, unique: true
 		password blank: false
-	}
-
-	static mapping = {
-		id generator: 'uuid'
-		password column: '`password`'
-
-		username nullable: true
-		fullname nullable: true
-		email nullable: true
+		nickname (nullable: true, blank: true, unique: true)
+		fullname (nullable: true, blank: true)
+		email (nullable: true, blank: true, unique: true)
 		password nullable: true
 		enabled nullable: true
 		accountExpired nullable: true
 		accountLocked nullable: true
 		passwordExpired nullable: true
-	
 	}
 
-	Set<Role> getAuthorities() {
+	static mapping =
+	{
+		id generator: 'uuid'
+		password column: '`password`'
+	}
+
+	String getNickName()
+	{
+		if (nickname?.length() > 0)
+		{
+			return nickname
+		}
+		
+		return username;
+	}
+	
+	String getDisplayName()
+	{
+		if (fullname?.length() > 0)
+		{
+			return fullname
+		}
+		
+		return username;
+	}
+
+	Set<Role> getAuthorities()
+	{
 		MemberRole.findAllByMember(this).collect { it.role } as Set
 	}
 
-	def beforeInsert() {
+	def beforeInsert()
+	{
 		encodePassword()
 	}
 
-	def beforeUpdate() {
-		if (isDirty('password')) {
+	def beforeUpdate()
+	{
+		if (isDirty('password'))
+		{
 			encodePassword()
 		}
 	}
 
-	protected void encodePassword() {
+	protected void encodePassword()
+	{
 		password = springSecurityService.encodePassword(password)
 	}
 }

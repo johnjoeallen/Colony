@@ -22,7 +22,7 @@
 		<g:message code="NewPost.colonies.label" default="Colonies" />
 		
 	</label>
-	<g:select id="colony" name="colony.name" from="${colony.Colony.list()}" multiple="multiple" optionKey="id" size="5" optionValue="name" class="many-to-many"/>
+	<g:select id="colony" name="colonies.id" from="${colony.Colony.list()}" multiple="multiple" optionKey="id" size="5" optionValue="name" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: NewPostInstance, field: 'tags', 'error')} ">

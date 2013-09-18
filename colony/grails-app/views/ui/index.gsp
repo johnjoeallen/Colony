@@ -69,6 +69,7 @@
 		font-weight: normal; font-size: .8rem; border-bottom: 0px; color: rgb(51,51,50); }
 	.postbody ul { list-style-type: disc; }
 	.postbody blockquote { font-style: italic; }
+	.postbody code { font-size: .6rem; font-family: courier-new; }
 	.postbody cite { font-style: italic; font-size: .5rem}
 	.navbar { min-height: 40px; }
 	.four.columns.logo a { color: white; font-style: italic; vertical-align: top; }
@@ -117,7 +118,7 @@
 						<div class="pretty small primary btn"><a href="j_spring_twitter_security_check">Login with Twitter</a></div>
 					</g:if>
 					<g:else>
-						<div class="pretty small primary btn"><a href="#">${member.fullname}</a></div>
+						<div class="pretty small primary btn"><a href="#">${member.displayName}</a></div>
 					</g:else>
 				</li>
 			</ul>

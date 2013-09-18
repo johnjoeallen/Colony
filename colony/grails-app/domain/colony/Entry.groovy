@@ -7,6 +7,8 @@ class Entry {
 	Post post
 	Date created = new Date()
 	
+	static belongsTo = [colony: Colony]
+	
 	static mapping = {
 		id generator: 'uuid'
 	}

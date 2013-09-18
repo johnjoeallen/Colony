@@ -117,7 +117,7 @@
 						<div class="pretty small primary btn"><a href="j_spring_twitter_security_check">Login with Twitter</a></div>
 					</g:if>
 					<g:else>
-						<div class="pretty small primary btn"><a href="#">${member.fullname}</a></div>
+						<div class="pretty small primary btn"><a href="#">${member.displayName}</a></div>
 					</g:else>
 				</li>
 			</ul>
