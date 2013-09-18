@@ -63,10 +63,10 @@ grails.project.dependency.resolution = {
 
         runtime ":database-migration:1.3.2"
 
-        compile ':cache:1.0.1'
-		compile ':markdown:1.1.1'
-		compile ':spring-security-core:1.2.7.3'
-		compile ":spring-security-twitter:0.5.4"
-		compile ":spring-security-facebook:0.15"
+        runtime ':cache:1.0.1'
+		runtime ':markdown:1.1.1'
+		runtime ':spring-security-core:1.2.7.3'
+		runtime ":spring-security-twitter:0.5.4"
+		runtime ":spring-security-facebook:0.15"
     }
 }
