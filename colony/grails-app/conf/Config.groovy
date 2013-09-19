@@ -67,7 +67,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://union.labs.mastercard.com:8080/colony"
     }
 }
 
