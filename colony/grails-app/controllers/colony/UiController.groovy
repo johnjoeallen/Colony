@@ -56,19 +56,59 @@ class UiController
 	{
 		def model = [:]
 		model.member = springSecurityService.currentUser
-		 
+		model.postInstance = new UIPost()
+		
 		render (view: "newPost", model: model)
 	}
 	
 	def savePost()
 	{
-		params.each { k, v ->
-			println "${k} = ${v}"
-		}
-		
 		colonyService.createPost(params.title, params.content, params.colonies.id)
 		
-		return colony()
+		redirect(action: "index")
+	}
+	
+	def deletePost()
+	{
+		colonyService.deletePost(params.id)
+		
+		redirect(action: "index")
+	}
+	
+	def unlinkPost()
+	{
+		colonyService.unlinkPost(params.colony, params.post)
+		
+		redirect(action: "index")
+	}
+	
+	def updatePost()
+	{
+		colonyService.updatePost(params.id, params.title, params.content)
+		
+		redirect(action: "index")
+	}
+	
+	def editPost()
+	{
+		def model = [:]
+		UIPost uiPost = new UIPost()
+		Post p = Post.findById(params.id)
+		model.member = springSecurityService.currentUser
+		model.postInstance = uiPost
+		
+		VersionedPost vp = p.getCurrent()
+		uiPost.id = p.id
+		uiPost.title = vp.getTitle()
+		uiPost.content = vp.getContent()
+		uiPost.colonies = new LinkedList<Colony>()
+		
+		Entry.executeQuery("FROM Entry WHERE post_id=:post_id", [post_id: params.id]).each 
+		{ Entry e ->
+			uiPost.colonies.add(e.colony)
+		}
+		 
+		render (view: "editPost", model: model)
 	}
 	
 	def colony()

@@ -129,12 +129,12 @@
 			<div class="ten columns">
 				<g:if test="${member != null}">
 					<div class="row">
-						<g:form action="savePost" >
+						<g:form action="updatePost" >
 							<fieldset class="post_form">
 								<g:render template="post_form"/>
 							</fieldset>
 							<fieldset class="buttons">
-								<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+								<g:submitButton name="update" class="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 							</fieldset>
 						</g:form>
 					</div>

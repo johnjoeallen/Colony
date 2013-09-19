@@ -1,9 +1,10 @@
 package colony
 
-class NewPost
+class UIPost
 {
+	String id
 	String title
 	String content
 	List<Colony> colonies
-	List<Tag> tags
+	String tags
 }
