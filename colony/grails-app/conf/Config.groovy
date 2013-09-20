@@ -69,6 +69,10 @@ environments {
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://union.labs.mastercard.com:8080/colony"
     }
+    moyville {
+        grails.logging.jul.usebridge = false
+        grails.serverURL = "http://colony.moyville.net/colony"
+    }
 }
 
 // log4j configuration

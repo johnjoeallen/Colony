@@ -117,64 +117,61 @@ class UiController
 		model.member = springSecurityService.currentUser 
 		model.colonies = getMembersColonies()
 		
-		if (model.member != null)
+		if (params.colony)
 		{
-			if (params.colony)
-			{
-				model.colonies.each
-				{ String id, Colony colony ->
-					if (colony.name.equalsIgnoreCase(params.colony))
-					{
-						model.colony = colony
-					}
-				}
-	
-			}
-			else if (params.id)
-			{
-				model.colonies.each 
-				{ String id, Colony colony ->
-					if (colony.id == params.id)
-					{
-						model.colony = colony
-					}
-				}
-			}
-			
-			model.posts = new LinkedHashMap<String, Post>()
-				
-			Entry.executeQuery("SELECT id FROM Entry ORDER BY created DESC").each
-			{ entryId ->
-				Entry entry = Entry.findById(entryId)
-				println entry
-				Colony colony = model.colonies[entry.colony.id]
-				if (colony)
+			model.colonies.each
+			{ String id, Colony colony ->
+				if (colony.name.equalsIgnoreCase(params.colony))
 				{
-					if (!model.posts[entry.post.id])
-					{
-						model.posts[entry.post.id] = entry.post
-					}
-					
-					model.posts[entry.post.id].colonies.put(colony.name, colony)
+					model.colony = colony
 				}
 			}
-			
-			model.posts = model.posts.findAll 
-			{ String key, Post post ->
-				VersionedPost version = post.current
-	
-				if (!model.colony || post.colonies.get(model.colony.name))
-				{			
-					while (version)
-					{
-						post.members.put(version.member.fullname, version.member)
-						version = version.previous
-					}
-					
-					post
-				} 
-			}.collect { k, v -> v }
+
 		}
+		else if (params.id)
+		{
+			model.colonies.each 
+			{ String id, Colony colony ->
+				if (colony.id == params.id)
+				{
+					model.colony = colony
+				}
+			}
+		}
+		
+		model.posts = new LinkedHashMap<String, Post>()
+			
+		Entry.executeQuery("SELECT id FROM Entry ORDER BY created DESC").each
+		{ entryId ->
+			Entry entry = Entry.findById(entryId)
+			Colony colony = Colony.findById(entry.colony.id)
+			
+			if (colony.open || (colony = model.colonies[entry.colony.id]))
+			{
+				if (!model.posts[entry.post.id])
+				{
+					model.posts[entry.post.id] = entry.post
+				}
+				
+				model.posts[entry.post.id].colonies.put(colony.name, colony)
+			}
+		}
+		
+		model.posts = model.posts.findAll 
+		{ String key, Post post ->
+			VersionedPost version = post.current
+
+			if (!model.colony || post.colonies.get(model.colony.name))
+			{			
+				while (version)
+				{
+					post.members.put(version.member, version.member)
+					version = version.previous
+				}
+				
+				post
+			} 
+		}.collect { k, v -> v }
 		
 		render (view: "index", model: model)
 	}

@@ -57,7 +57,7 @@
 	h2 { font-size: 1.3rem; }
 	.posts { margin-bottom: 8px; color: rgb(51,51,50); }
 	.posts.author.title { 
-		font-size: .7rem; margin-bottom: 8px; padding-bottom: 8px; color: rgb(51,51,50); }
+		font-size: .7rem; margin-bottom: 1px; padding-bottom: 1px; margin-top: 1px; padding-top: 1px; color: rgb(51,51,50); }
 	.postbody {
 		padding-left: 8px;
 		#border-left: 1px dotted #ccc; 
@@ -126,29 +126,18 @@
 	</div>
 
 	<div class="content">
-		<g:if test="${member != null}">
-			<div class="row">
-				<div class="ten columns">
-					<div class="row">
-						<g:each in="${posts}" var="post">
-							<g:render template="${post.type.toLowerCase()+"_display"}" model="['post':post, 'current':post.current]"/>
-						</g:each>
-					</div>
-				</div>
-				<div class="two columns">
-					<p>Profile</p>
+		<div class="row">
+			<div class="ten columns">
+				<div class="row">
+					<g:each in="${posts}" var="post">
+						<g:render template="${post.type.toLowerCase()+"_display"}" model="['member': member, 'post':post, 'current':post.current]"/>
+					</g:each>
 				</div>
 			</div>
-		</g:if>
-		<g:else>
-			<div class="row">
-				<div class="ten columns">
-					<div class="row">
-						<markdown:renderHtml><g:render template="colony"/></markdown:renderHtml>
-					</div>
-				</div>
+			<div class="two columns">
+				<p>Profile</p>
 			</div>
-		</g:else>
+		</div>
   	</div>
 
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->

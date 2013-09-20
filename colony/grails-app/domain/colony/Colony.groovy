@@ -6,6 +6,7 @@ class Colony {
 	String id
 	String	name
 	Date	created = new Date()
+	Boolean	open = false
 	
 	static hasMany = [members: Member, entries: Entry]
 
@@ -15,5 +16,6 @@ class Colony {
 		
     static constraints = {
 		created nullable:true
+		open nullable: true
     }
 }
