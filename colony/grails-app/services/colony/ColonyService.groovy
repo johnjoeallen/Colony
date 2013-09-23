@@ -28,12 +28,16 @@ class ColonyService
 	def addPostToColony(Post p, String colonyId)
 	{
 		Colony colony = Colony.findWhere([id: colonyId])
-		Entry entry = new Entry()
-		entry.post = p
-		entry.colony = colony
-		entry.save()
-		colony.addToEntries(entry)
-		colony.save()
+		
+		if (colony.getOpen() || colony.members.contains(springSecurityService.currentUser))
+		{
+			Entry entry = new Entry()
+			entry.post = p
+			entry.colony = colony
+			entry.save()
+			colony.addToEntries(entry)
+			colony.save()
+		}
 	}
 	
 	/**
