@@ -22,7 +22,7 @@
 	<div class="postbody">
 		<markdown:renderHtml>${current.content}</markdown:renderHtml>
 		<a href="likePost"><img src="images/like.png" width="16px" height="16px"/>Like</a> 
-		<a href="unlikePost"><img src="images/unlike.png" width="16px" height="16px"/>Unlike</a>
+		<a href="dislikePost"><img src="images/dislike.png" width="16px" height="16px"/>Dislike</a>
 	</div>
 </div>
 
