@@ -96,6 +96,8 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.config.locations = ["file:/etc/default/colony.properties"]
+
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'colony.Member'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'colony.MemberRole'
