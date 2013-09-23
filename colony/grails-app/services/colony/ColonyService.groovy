@@ -144,7 +144,7 @@ class ColonyService
 		if (count == 1)
 		{
 			// this was the last viewable instance of this post, delete it?
-			deletePost(postId)
+			//deletePost(postId)
 		}
 	}
 	
