@@ -177,7 +177,7 @@ class ColonyService
 	 * @param m
 	 * @return
 	 */
-	def addMember(Colony c, Member m)
+	def addMember(Colony c, Follower m)
 	{
 		c.addToMembers(m)
 		c.save()

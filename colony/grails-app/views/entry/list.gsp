@@ -24,9 +24,9 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="created" title="${message(code: 'entry.created.label', default: 'Created')}" />
+						<g:sortableColumn property="content" title="${message(code: 'entry.content.label', default: 'Content')}" />
 					
-						<th><g:message code="entry.post.label" default="Post" /></th>
+						<th><g:message code="entry.owner.label" default="Owner" /></th>
 					
 					</tr>
 				</thead>
@@ -34,9 +34,9 @@
 				<g:each in="${entryInstanceList}" status="i" var="entryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${entryInstance.id}">${fieldValue(bean: entryInstance, field: "created")}</g:link></td>
+						<td><g:link action="show" id="${entryInstance.id}">${fieldValue(bean: entryInstance, field: "content")}</g:link></td>
 					
-						<td>${fieldValue(bean: entryInstance, field: "post")}</td>
+						<td>${fieldValue(bean: entryInstance, field: "owner")}</td>
 					
 					</tr>
 				</g:each>

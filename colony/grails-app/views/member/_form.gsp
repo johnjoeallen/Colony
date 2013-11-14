@@ -2,76 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'username', 'error')} required">
-	<label for="username">
-		<g:message code="member.username.label" default="Username" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="username" required="" value="${memberInstance?.username}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'password', 'error')} ">
-	<label for="password">
-		<g:message code="member.password.label" default="Password" />
+<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'colony', 'error')} ">
+	<label for="colony">
+		<g:message code="member.colony.label" default="Colony" />
 		
 	</label>
-	<g:textField name="password" value="${memberInstance?.password}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'nickname', 'error')} ">
-	<label for="nickname">
-		<g:message code="member.nickname.label" default="Nickname" />
-		
-	</label>
-	<g:textField name="nickname" value="${memberInstance?.nickname}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'fullname', 'error')} ">
-	<label for="fullname">
-		<g:message code="member.fullname.label" default="Fullname" />
-		
-	</label>
-	<g:textField name="fullname" value="${memberInstance?.fullname}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'email', 'error')} ">
-	<label for="email">
-		<g:message code="member.email.label" default="Email" />
-		
-	</label>
-	<g:textField name="email" value="${memberInstance?.email}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'enabled', 'error')} ">
-	<label for="enabled">
-		<g:message code="member.enabled.label" default="Enabled" />
-		
-	</label>
-	<g:checkBox name="enabled" value="${memberInstance?.enabled}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
-		<g:message code="member.accountExpired.label" default="Account Expired" />
-		
-	</label>
-	<g:checkBox name="accountExpired" value="${memberInstance?.accountExpired}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
-		<g:message code="member.accountLocked.label" default="Account Locked" />
-		
-	</label>
-	<g:checkBox name="accountLocked" value="${memberInstance?.accountLocked}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'passwordExpired', 'error')} ">
-	<label for="passwordExpired">
-		<g:message code="member.passwordExpired.label" default="Password Expired" />
-		
-	</label>
-	<g:checkBox name="passwordExpired" value="${memberInstance?.passwordExpired}" />
+	<g:select id="colony" name="colony.id" from="${colony.Colony.list()}" optionKey="id" value="${memberInstance?.colony?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'created', 'error')} required">
@@ -82,26 +18,26 @@
 	<g:datePicker name="created" precision="day"  value="${memberInstance?.created}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'lastLogin', 'error')} required">
-	<label for="lastLogin">
-		<g:message code="member.lastLogin.label" default="Last Login" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'name', 'error')} ">
+	<label for="name">
+		<g:message code="member.name.label" default="Name" />
+		
 	</label>
-	<g:datePicker name="lastLogin" precision="day"  value="${memberInstance?.lastLogin}"  />
+	<g:textField name="name" value="${memberInstance?.name}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'posts', 'error')} ">
-	<label for="posts">
-		<g:message code="member.posts.label" default="Posts" />
+<div class="fieldcontain ${hasErrors(bean: memberInstance, field: 'stream', 'error')} ">
+	<label for="stream">
+		<g:message code="member.stream.label" default="Stream" />
 		
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${memberInstance?.posts?}" var="p">
-    <li><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
+<g:each in="${memberInstance?.stream?}" var="s">
+    <li><g:link controller="entry" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="post" action="create" params="['member.id': memberInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'post.label', default: 'Post')])}</g:link>
+<g:link controller="entry" action="create" params="['member.id': memberInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'entry.label', default: 'Entry')])}</g:link>
 </li>
 </ul>
 

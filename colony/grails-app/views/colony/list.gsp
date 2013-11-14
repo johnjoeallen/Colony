@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="created" title="${message(code: 'colony.created.label', default: 'Created')}" />
 					
+						<g:sortableColumn property="open" title="${message(code: 'colony.open.label', default: 'Open')}" />
+					
 						<g:sortableColumn property="name" title="${message(code: 'colony.name.label', default: 'Name')}" />
 					
 					</tr>
@@ -35,6 +37,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${colonyInstance.id}">${fieldValue(bean: colonyInstance, field: "created")}</g:link></td>
+					
+						<td><g:formatBoolean boolean="${colonyInstance.open}" /></td>
 					
 						<td>${fieldValue(bean: colonyInstance, field: "name")}</td>
 					

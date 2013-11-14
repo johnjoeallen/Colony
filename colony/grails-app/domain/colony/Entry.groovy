@@ -1,18 +1,15 @@
 package colony
 
-import java.util.Date;
+class Entry
+{
+	String	id
+	String	content
+	Member	owner
 
-class Entry {
-	String id
-	Post post
-	Date created = new Date()
-	
-	static belongsTo = [colony: Colony]
-	
-	static mapping = {
-		id generator: 'uuid'
+	static mapping =
+	{ id generator: 'uuid' }
+
+	static constraints =
+	{
 	}
-	
-    static constraints = {
-    }
 }

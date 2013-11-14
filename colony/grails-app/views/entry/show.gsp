@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list entry">
 			
-				<g:if test="${entryInstance?.created}">
+				<g:if test="${entryInstance?.content}">
 				<li class="fieldcontain">
-					<span id="created-label" class="property-label"><g:message code="entry.created.label" default="Created" /></span>
+					<span id="content-label" class="property-label"><g:message code="entry.content.label" default="Content" /></span>
 					
-						<span class="property-value" aria-labelledby="created-label"><g:formatDate date="${entryInstance?.created}" /></span>
+						<span class="property-value" aria-labelledby="content-label"><g:fieldValue bean="${entryInstance}" field="content"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${entryInstance?.post}">
+				<g:if test="${entryInstance?.owner}">
 				<li class="fieldcontain">
-					<span id="post-label" class="property-label"><g:message code="entry.post.label" default="Post" /></span>
+					<span id="owner-label" class="property-label"><g:message code="entry.owner.label" default="Owner" /></span>
 					
-						<span class="property-value" aria-labelledby="post-label"><g:link controller="post" action="show" id="${entryInstance?.post?.id}">${entryInstance?.post?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="owner-label"><g:link controller="member" action="show" id="${entryInstance?.owner?.id}">${entryInstance?.owner?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

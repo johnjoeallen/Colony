@@ -32,6 +32,26 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${colonyInstance?.open}">
+				<li class="fieldcontain">
+					<span id="open-label" class="property-label"><g:message code="colony.open.label" default="Open" /></span>
+					
+						<span class="property-value" aria-labelledby="open-label"><g:formatBoolean boolean="${colonyInstance?.open}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${colonyInstance?.contributors}">
+				<li class="fieldcontain">
+					<span id="contributors-label" class="property-label"><g:message code="colony.contributors.label" default="Contributors" /></span>
+					
+						<g:each in="${colonyInstance.contributors}" var="c">
+						<span class="property-value" aria-labelledby="contributors-label"><g:link controller="member" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${colonyInstance?.entries}">
 				<li class="fieldcontain">
 					<span id="entries-label" class="property-label"><g:message code="colony.entries.label" default="Entries" /></span>
@@ -43,12 +63,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${colonyInstance?.members}">
+				<g:if test="${colonyInstance?.followers}">
 				<li class="fieldcontain">
-					<span id="members-label" class="property-label"><g:message code="colony.members.label" default="Members" /></span>
+					<span id="followers-label" class="property-label"><g:message code="colony.followers.label" default="Followers" /></span>
 					
-						<g:each in="${colonyInstance.members}" var="m">
-						<span class="property-value" aria-labelledby="members-label"><g:link controller="member" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
+						<g:each in="${colonyInstance.followers}" var="f">
+						<span class="property-value" aria-labelledby="followers-label"><g:link controller="member" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

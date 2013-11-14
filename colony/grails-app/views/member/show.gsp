@@ -23,83 +23,11 @@
 			</g:if>
 			<ol class="property-list member">
 			
-				<g:if test="${memberInstance?.username}">
+				<g:if test="${memberInstance?.colony}">
 				<li class="fieldcontain">
-					<span id="username-label" class="property-label"><g:message code="member.username.label" default="Username" /></span>
+					<span id="colony-label" class="property-label"><g:message code="member.colony.label" default="Colony" /></span>
 					
-						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${memberInstance}" field="username"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.password}">
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="member.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${memberInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.nickname}">
-				<li class="fieldcontain">
-					<span id="nickname-label" class="property-label"><g:message code="member.nickname.label" default="Nickname" /></span>
-					
-						<span class="property-value" aria-labelledby="nickname-label"><g:fieldValue bean="${memberInstance}" field="nickname"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.fullname}">
-				<li class="fieldcontain">
-					<span id="fullname-label" class="property-label"><g:message code="member.fullname.label" default="Fullname" /></span>
-					
-						<span class="property-value" aria-labelledby="fullname-label"><g:fieldValue bean="${memberInstance}" field="fullname"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="member.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${memberInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.enabled}">
-				<li class="fieldcontain">
-					<span id="enabled-label" class="property-label"><g:message code="member.enabled.label" default="Enabled" /></span>
-					
-						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${memberInstance?.enabled}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.accountExpired}">
-				<li class="fieldcontain">
-					<span id="accountExpired-label" class="property-label"><g:message code="member.accountExpired.label" default="Account Expired" /></span>
-					
-						<span class="property-value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${memberInstance?.accountExpired}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.accountLocked}">
-				<li class="fieldcontain">
-					<span id="accountLocked-label" class="property-label"><g:message code="member.accountLocked.label" default="Account Locked" /></span>
-					
-						<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${memberInstance?.accountLocked}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${memberInstance?.passwordExpired}">
-				<li class="fieldcontain">
-					<span id="passwordExpired-label" class="property-label"><g:message code="member.passwordExpired.label" default="Password Expired" /></span>
-					
-						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${memberInstance?.passwordExpired}" /></span>
+						<span class="property-value" aria-labelledby="colony-label"><g:link controller="colony" action="show" id="${memberInstance?.colony?.id}">${memberInstance?.colony?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -113,21 +41,21 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${memberInstance?.lastLogin}">
+				<g:if test="${memberInstance?.name}">
 				<li class="fieldcontain">
-					<span id="lastLogin-label" class="property-label"><g:message code="member.lastLogin.label" default="Last Login" /></span>
+					<span id="name-label" class="property-label"><g:message code="member.name.label" default="Name" /></span>
 					
-						<span class="property-value" aria-labelledby="lastLogin-label"><g:formatDate date="${memberInstance?.lastLogin}" /></span>
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${memberInstance}" field="name"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${memberInstance?.posts}">
+				<g:if test="${memberInstance?.stream}">
 				<li class="fieldcontain">
-					<span id="posts-label" class="property-label"><g:message code="member.posts.label" default="Posts" /></span>
+					<span id="stream-label" class="property-label"><g:message code="member.stream.label" default="Stream" /></span>
 					
-						<g:each in="${memberInstance.posts}" var="p">
-						<span class="property-value" aria-labelledby="posts-label"><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						<g:each in="${memberInstance.stream}" var="s">
+						<span class="property-value" aria-labelledby="stream-label"><g:link controller="entry" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
